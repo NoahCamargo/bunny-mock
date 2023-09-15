@@ -146,6 +146,23 @@ module BunnyMock
     end
 
     ##
+    # Mocks a xrandom exchange
+    #
+    # @param [String] name Exchange name
+    # @param [Hash] opts Exchange parameters
+    #
+    # @option opts [Boolean] :durable
+    # @option opts [Boolean] :auto_delete
+    # @option opts [Hash] :arguments
+    #
+    # @return [BunnyMock::Exchange] Mocked exchange instance
+    # @api public
+    #
+    def xrandom(name, opts = {})
+      exchange name, opts.merge(type: :xrandom)
+    end
+
+    ##
     # Mocks a topic exchange
     #
     # @param [String] name Exchange name

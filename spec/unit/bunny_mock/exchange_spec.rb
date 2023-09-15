@@ -6,6 +6,10 @@ describe BunnyMock::Exchange do
       expect(BunnyMock::Exchange.declare(@channel, 'testing.xchg', type: :direct).class).to eq(BunnyMock::Exchanges::Direct)
     end
 
+    it 'should create a xrandom exchange' do
+      expect(BunnyMock::Exchange.declare(@channel, 'testing.xchg', type: :'x-random').class).to eq(BunnyMock::Exchanges::Xrandom)
+    end
+
     it 'should create a topic exchange' do
       expect(BunnyMock::Exchange.declare(@channel, 'testing.xchg', type: :topic).class).to eq(BunnyMock::Exchanges::Topic)
     end

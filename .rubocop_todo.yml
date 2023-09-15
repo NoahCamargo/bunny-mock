@@ -19,6 +19,7 @@ Style/Documentation:
     - 'test/**/*'
     - 'lib/bunny_mock/channel.rb'
     - 'lib/bunny_mock/exchange.rb'
+    - 'lib/bunny_mock/exchanges/xrandom.rb'
     - 'lib/bunny_mock/exchanges/direct.rb'
     - 'lib/bunny_mock/exchanges/fanout.rb'
     - 'lib/bunny_mock/exchanges/headers.rb'

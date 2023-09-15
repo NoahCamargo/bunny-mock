@@ -13,6 +13,7 @@ require 'bunny_mock/channel'
 require 'bunny_mock/exchange'
 require 'bunny_mock/queue'
 
+require 'bunny_mock/exchanges/xrandom'
 require 'bunny_mock/exchanges/direct'
 require 'bunny_mock/exchanges/topic'
 require 'bunny_mock/exchanges/fanout'

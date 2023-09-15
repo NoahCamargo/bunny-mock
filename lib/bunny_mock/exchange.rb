@@ -22,7 +22,7 @@ module BunnyMock
         type = opts.fetch :type, :direct
 
         # get needed class type
-        klazz = BunnyMock::Exchanges.const_get type.to_s.capitalize
+        klazz = BunnyMock::Exchanges.const_get type.to_s.gsub('-', '').capitalize
 
         # create exchange of desired type
         klazz.new channel, name, type, opts
@@ -107,6 +107,7 @@ module BunnyMock
     #
     # @return [BunnyMock::Exchange] self
     # @see {BunnyMock::Exchanges::Direct#deliver}
+    # @see {BunnyMock::Exchanges::Xrandom#deliver}
     # @see {BunnyMock::Exchanges::Topic#deliver}
     # @see {BunnyMock::Exchanges::Fanout#deliver}
     # @see {BunnyMock::Exchanges::Headers#deliver}
@@ -228,6 +229,7 @@ module BunnyMock
     # Deliver a message to routes
     #
     # @see BunnyMock::Exchanges::Direct#deliver
+    # @see BunnyMock::Exchanges::Xrandom#deliver
     # @see BunnyMock::Exchanges::Topic#deliver
     # @see BunnyMock::Exchanges::Fanout#deliver
     # @see BunnyMock::Exchanges::Headers#deliver

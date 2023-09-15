@@ -83,6 +83,13 @@ describe BunnyMock::Channel do
 		end
 	end
 
+	context '#xrandom' do
+
+		it 'should declare a new xrandom exchange' do
+			expect(@channel.xrandom('testing.xchg').class).to eq(BunnyMock::Exchanges::Xrandom)
+		end
+	end
+
 	context '#topic' do
 
 		it 'should declare a new topic exchange' do
